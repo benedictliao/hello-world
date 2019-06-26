@@ -1,0 +1,20 @@
+public void guestLogin(View view){
+        SharedPreferences preferences = getSharedPreferences("login", MODE_PRIVATE);
+
+        String validate_email = preferences.getString("email", "");
+        String validate_password = preferences.getString("password", "");
+
+        if(email.getText().toString().equals(validate_email) &&
+                password.getText().toString().equals(validate_password)){
+
+            Toast.makeText(getApplicationContext(), "Log In Successful", Toast.LENGTH_LONG).show();
+
+            Intent welcome = new Intent(this, WelcomeActivity.class);
+            startActivity(welcome);
+        }
+        else{
+            Toast.makeText(getApplicationContext(), "Log in failed, Try Again", Toast.LENGTH_LONG).show();
+            email.getText().clear();
+            password.getText().clear();
+        }
+    }
