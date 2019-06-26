@@ -17,4 +17,6 @@ public void guestLogin(View view){
             email.getText().clear();
             password.getText().clear();
         }
+        
+        //editediteditediteditedit
     }
